@@ -9,6 +9,14 @@ namespace Logging
 {
     public static class IAlgoritmExpansion
     {
+        /// <summary>
+        /// Calculates the running time of the method Calculate.
+        /// </summary>
+        /// <param name="algorithm">This method extensions that interface.</param>
+        /// <param name="first">First argument in methcod Calculate.</param>
+        /// <param name="second">Second argument in methcod Calculate.</param>
+        /// <param name="typeTime">Time unit.</param>
+        /// <returns>Lead time</returns>
         public static long GetLeadTime(this IAlgorithm algorithm, int first, int second, TypeTime typeTime = TypeTime.Ticks)
         {
             Stopwatch stopwatch = new Stopwatch();
@@ -25,6 +33,13 @@ namespace Logging
             };
         }
 
+        /// <summary>
+        /// Makes method logs 
+        /// </summary>
+        /// <param name="algorithm">This method extensions that interface.</param>
+        /// <param name="first">First argument in methcod Calculate.</param>
+        /// <param name="second">Second argument in methcod Calculate.</param>
+        /// <param name="provider">It's logger provider</param>
         public static void Logging(this IAlgorithm algorithm, int first, int second, ILoggerProvider provider)
         {
             ILoggerFactory loggerFactory = new LoggerFactory();
