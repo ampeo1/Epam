@@ -2,7 +2,7 @@
 
 namespace BinarySearch
 {
-    public class Algorithms<T>
+    public static class Algorithms
     {
         /// <summary>
         /// This method implements algorithm binary search.
@@ -11,7 +11,7 @@ namespace BinarySearch
         /// <param name="item">The item wich we need find.</param>
         /// <returns>Index element wich we need find.</returns>
         /// <exception cref="ArgumentNullException">Throws when <see cref="array"/> or <see cref="item"/> is null.</exception>
-        public int? BinarySearch(T[] array, T item)
+        public static int? BinarySearch<T>(T[] array, T item)
         {
             if (array is null || item is null)
             {
@@ -25,7 +25,7 @@ namespace BinarySearch
 
             if (item is IComparable)
             {
-                return this.Search(array, item as IComparable, 0, array.Length);
+                return Search(array, item as IComparable, 0, array.Length);
             }
             else
             {
@@ -33,9 +33,9 @@ namespace BinarySearch
             }
         }
 
-        private int? Search(T[] array, IComparable item, int leftRange, int rightRange)
+        private static int? Search<T>(T[] array, IComparable item, int leftRange, int rightRange)
         {
-            if (leftRange > rightRange)
+            if (leftRange >= rightRange)
             {
                 return null;
             }
@@ -49,11 +49,11 @@ namespace BinarySearch
 
             if (resultCompare == 1)
             {
-                return this.Search(array, item, mid + 1, rightRange);
+                return Search(array, item, mid + 1, rightRange);
             }
             else
             {
-                return this.Search(array, item, leftRange, mid);
+                return Search(array, item, leftRange, mid);
             }
         }
     }
