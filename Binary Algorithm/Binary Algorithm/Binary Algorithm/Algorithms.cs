@@ -10,6 +10,7 @@ namespace BinarySearch
         /// <param name="array">Source array.</param>
         /// <param name="item">The item wich we need find.</param>
         /// <returns>Index element wich we need find.</returns>
+        /// <exception cref="ArgumentNullException">Throws when <see cref="array"/> or <see cref="item"/> is null.</exception>
         public int? BinarySearch(T[] array, T item)
         {
             if (array is null || item is null)
