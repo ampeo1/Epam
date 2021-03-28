@@ -37,6 +37,38 @@ namespace BinarySearchTree
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="TreeCollection{T}"/> class.
+        /// </summary>
+        /// <param name="source">Source array.</param>
+        /// <param name="comparer">Comparator.</param>
+        public TreeCollection(T[] source, Comparer<T> comparer = null)
+        {
+            if (source is null)
+            {
+                throw new ArgumentNullException($"{nameof(source)}");
+            }
+
+            if (comparer is null)
+            {
+                if (Comparer<T>.Default is null)
+                {
+                    throw new ArgumentException($"Comparer is undefined", $"{nameof(comparer)}");
+                }
+                else
+                {
+                    comparer = Comparer<T>.Default;
+                }
+            }
+
+            this.comparer = comparer;
+            this.count = 0;
+            foreach (var item in source)
+            {
+                this.Add(item);
+            }
+        }
+
+        /// <summary>
         /// Gets count of elements.
         /// </summary>
         public int Count
@@ -136,11 +168,15 @@ namespace BinarySearchTree
                 throw new ArgumentException($"{nameof(arrayIndex)} is less than 0", $"{nameof(arrayIndex)}");
             }
 
-            array = new int[count - arrayIndex];
+            if (array is null)
+            {
+                throw new ArgumentNullException($"{nameof(array)}");
+            }
+
             int index = 0;
             foreach (T item in this.NLR())
             {
-                if (arrayIndex == 0)
+                if (arrayIndex == 0 && index != array.Length)
                 {
                     array[index] = item;
                     index++;
@@ -364,12 +400,12 @@ namespace BinarySearchTree
         {
             if (!(node is null))
             {
-                foreach (var item in this.LNR(node.Left))
+                foreach (var item in this.LRN(node.Left))
                 {
                     yield return item;
                 }
 
-                foreach (var item in this.LNR(node.Right))
+                foreach (var item in this.LRN(node.Right))
                 {
                     yield return item;
                 }
