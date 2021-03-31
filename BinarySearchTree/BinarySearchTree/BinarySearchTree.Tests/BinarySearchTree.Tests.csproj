@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BinarySearchTree\BinarySearchTree.csproj" />
     <ProjectReference Include="..\BookClass\BookClass.csproj" />
+    <ProjectReference Include="..\TimeStruct\TimeStruct.csproj" />
   </ItemGroup>
 
 </Project>

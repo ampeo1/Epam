@@ -2,6 +2,7 @@ using BookClass;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using TimeStruct;
 
 namespace BinarySearchTree.Tests
 {
@@ -118,6 +119,54 @@ namespace BinarySearchTree.Tests
         {
             IEnumerable<T> result = _tree.NLR();
             Assert.AreEqual(NLR, _tree.NLR());
+        }
+    }
+
+    public class TestComparer
+    {
+        [TestCaseSource(typeof(DataSource), nameof(DataSource.TestCasesString))]
+        public void ComparerString_Test(string[] source, string[] NLR, string[] LNR, string[] LRN, StringComparer comparer)
+        {
+            var tree = new TreeCollection<string>(source, comparer);
+            CollectionAssert.AreEqual(tree.NLR(), NLR);
+            CollectionAssert.AreEqual(tree.LNR(), LNR);
+            CollectionAssert.AreEqual(tree.LRN(), LRN);
+        }
+
+        [TestCaseSource(typeof(DataSource), nameof(DataSource.TestCasesInt32))]
+        public void ComparerInt32_Test(int[] source, int[] NLR, int[] LNR, int[] LRN, IntComparer comparer)
+        {
+            var tree = new TreeCollection<int>(source, comparer);
+            CollectionAssert.AreEqual(tree.NLR(), NLR);
+            CollectionAssert.AreEqual(tree.LNR(), LNR);
+            CollectionAssert.AreEqual(tree.LRN(), LRN);
+        }
+
+        [TestCaseSource(typeof(DataSource), nameof(DataSource.TestCasesBookWithoutComparer))]
+        public void ComparerBookWithoutComparer_Test(Book[] source, Book[] NLR, Book[] LNR, Book[] LRN)
+        {
+            var tree = new TreeCollection<Book>(source, null);
+            CollectionAssert.AreEqual(tree.NLR(), NLR);
+            CollectionAssert.AreEqual(tree.LNR(), LNR);
+            CollectionAssert.AreEqual(tree.LRN(), LRN);
+        }
+
+        [TestCaseSource(typeof(DataSource), nameof(DataSource.TestCasesBookWithComparer))]
+        public void ComparerBookWithComparer_Test(Book[] source, Book[] NLR, Book[] LNR, Book[] LRN, AuthorComparer comparer)
+        {
+            var tree = new TreeCollection<Book>(source, comparer);
+            CollectionAssert.AreEqual(tree.NLR(), NLR);
+            CollectionAssert.AreEqual(tree.LNR(), LNR);
+            CollectionAssert.AreEqual(tree.LRN(), LRN);
+        }
+
+        [TestCaseSource(typeof(DataSource), nameof(DataSource.TestCasesTimeStruct))]
+        public void ComparerTimeStruct_Test(Time[] source, Time[] NLR, Time[] LNR, Time[] LRN, Comparer<Time> comparer)
+        {
+            var tree = new TreeCollection<Time>(source, comparer);
+            CollectionAssert.AreEqual(tree.NLR(), NLR);
+            CollectionAssert.AreEqual(tree.LNR(), LNR);
+            CollectionAssert.AreEqual(tree.LRN(), LRN);
         }
     }
 }

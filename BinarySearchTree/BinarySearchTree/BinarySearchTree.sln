@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinarySearchTree", "BinaryS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinarySearchTree.Tests", "BinarySearchTree.Tests\BinarySearchTree.Tests.csproj", "{345E9E8E-3453-458C-884C-90EAED9BFFA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookClass", "BookClass\BookClass.csproj", "{28405276-0BCB-4B6C-9D2B-37D7928F64B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookClass", "BookClass\BookClass.csproj", "{28405276-0BCB-4B6C-9D2B-37D7928F64B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeStruct", "TimeStruct\TimeStruct.csproj", "{3A67C3CD-A2A6-4209-8CFF-0691C5F8280B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{28405276-0BCB-4B6C-9D2B-37D7928F64B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28405276-0BCB-4B6C-9D2B-37D7928F64B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28405276-0BCB-4B6C-9D2B-37D7928F64B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A67C3CD-A2A6-4209-8CFF-0691C5F8280B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A67C3CD-A2A6-4209-8CFF-0691C5F8280B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A67C3CD-A2A6-4209-8CFF-0691C5F8280B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A67C3CD-A2A6-4209-8CFF-0691C5F8280B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
