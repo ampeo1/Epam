@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherStation", "WeatherStation\WeatherStation.csproj", "{1246B6C7-0038-4957-89B1-3A71E68A042E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "WeatherData\Data.csproj", "{9279135B-F59C-4716-B6D4-F83FAE82A9CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reports", "Reports\Reports.csproj", "{C0050201-D9E5-4F10-8093-058BEFC65907}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1246B6C7-0038-4957-89B1-3A71E68A042E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1246B6C7-0038-4957-89B1-3A71E68A042E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1246B6C7-0038-4957-89B1-3A71E68A042E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1246B6C7-0038-4957-89B1-3A71E68A042E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9279135B-F59C-4716-B6D4-F83FAE82A9CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9279135B-F59C-4716-B6D4-F83FAE82A9CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9279135B-F59C-4716-B6D4-F83FAE82A9CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9279135B-F59C-4716-B6D4-F83FAE82A9CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0050201-D9E5-4F10-8093-058BEFC65907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0050201-D9E5-4F10-8093-058BEFC65907}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0050201-D9E5-4F10-8093-058BEFC65907}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0050201-D9E5-4F10-8093-058BEFC65907}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {22378656-2552-4645-8680-840BEBF657DA}
+	EndGlobalSection
+EndGlobal
