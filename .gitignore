@@ -351,3 +351,7 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/Generic-matrices/GenericMetrices/GenericMetrices.sln
+/Generic-matrices/GenericMetrices/GenericMetrices/Matrix.cs
+/Generic-matrices/GenericMetrices/GenericMetrices/GenericMetrices.csproj
+/Events. WeatherStation/WeatherStation/WeatherStation/Program.cs
