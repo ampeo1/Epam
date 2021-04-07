@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Storage_for_service</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BookClass\BookClass.csproj" />
+    <ProjectReference Include="..\ServiceForWorkingWithListOfBooks\ServiceForWorkingWithListOfBooks.csproj" />
+  </ItemGroup>
+
+</Project>
