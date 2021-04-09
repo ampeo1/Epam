@@ -35,20 +35,9 @@ namespace GenericMetricesTests
         }
 
         [TestCaseSource(typeof(TestCaseSource), nameof(TestCaseSource.TestCaseForAddString))]
-        public void TestAddForString(Matrix<string> first, Matrix<string> second, Matrix<string> result)
-        {
-            Matrix<string> actual = first.Add(second);
-            Assert.AreEqual(result.GetType(), actual.GetType());
-            for (int i = 0; i < actual.GetSize; i++)
-            {
-                for (int j = 0; j < actual.GetSize; j++)
-                {
-                    Assert.AreEqual(result[i, j], actual[i, j]);
-                }
-            }
-        }
+        public void TestAddForString(Matrix<string> first, Matrix<string> second) => Assert.Throws<InvalidOperationException>(() => first.Add(second));
 
         [TestCaseSource(typeof(TestCaseSource), nameof(TestCaseSource.TestCaseForAddBool))]
-        public void TestAddForBool(Matrix<bool> first, Matrix<bool> second) => Assert.Throws<NotSupportedException>(() => first.Add(second));
+        public void TestAddForBool(Matrix<bool> first, Matrix<bool> second) => Assert.Throws<InvalidOperationException>(() => first.Add(second));
     }
 }

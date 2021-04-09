@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace GenericMetrices
@@ -25,7 +26,7 @@ namespace GenericMetrices
                 {
                     try
                     {
-                        result[i, j] = (T)((dynamic)first[i, j] + second[i, j]);
+                        result[i, j] = Add<T>()(first[i, j], second[i, j]);
                     }
                     catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
                     {
@@ -70,6 +71,16 @@ namespace GenericMetrices
             {
                 return new SquareMatrix<T>(size);
             }
+        }
+
+        private static Func<T, T, T> Add<T>()
+        {
+            ParameterExpression paramL = Expression.Parameter(typeof(T), "lhs"),
+                                paramR = Expression.Parameter(typeof(T), "rhs");
+            BinaryExpression body = Expression.Add(paramL, paramR);
+            Func<T, T, T> add = Expression.Lambda<Func<T, T, T>>(body, paramL, paramR).Compile();
+            return add;
+
         }
     }
 }

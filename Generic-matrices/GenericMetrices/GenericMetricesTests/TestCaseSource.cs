@@ -48,8 +48,7 @@ namespace GenericMetricesTests
             {
                 yield return new TestCaseData(
                     new SquareMatrix<string>(new string[,] { { "a", "b", "c" }, { "d", "e", "f" }, { "g", "h", "i" } }),
-                    new DiagonalMatrix<string>(new string[] { "j", "k", "l" }),
-                    new SquareMatrix<string>(new string[,] { { "aj", "b", "c" }, { "d", "ek", "f" }, { "g", "h", "il" } }));
+                    new DiagonalMatrix<string>(new string[] { "j", "k", "l" }));
             }
         }
 
